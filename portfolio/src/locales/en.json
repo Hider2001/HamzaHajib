@@ -1,0 +1,58 @@
+{
+    "brand": "Hamza Hajeb",
+    "nav": {
+        "home": "Home",
+        "work": "Work",
+        "about": "About",
+        "contact": "Contact"
+    },
+    "hero": {
+        "headline": "Building Digital Experiences",
+        "subheadline": "Full-stack developer crafting clean, scalable solutions with 1.5+ years of experience",
+        "cta": "View My Work"
+    },
+    "work": {
+        "title": "Selected Projects",
+        "viewProject": "View Project",
+        "filterAll": "All"
+    },
+    "about": {
+        "title": "About Me",
+        "bio": "Results-oriented web and software developer with over 1.5 years of professional experience. Skilled in building web applications, dashboards, and business systems with a strong focus on clean code, scalability, and user experience."
+    },
+    "skills": {
+        "title": "Technical Skills",
+        "programming": "Programming & Development",
+        "databases": "Databases",
+        "tools": "Tools & Technologies"
+    },
+    "contact": {
+        "title": "Get In Touch",
+        "subtitle": "Have a project in mind? Let's talk.",
+        "name": "Your Name",
+        "email": "Email Address",
+        "message": "Your Message",
+        "submit": "Send Message",
+        "sending": "Sending...",
+        "success": "Message sent successfully!",
+        "error": "Failed to send message. Please try again."
+    },
+    "footer": {
+        "connect": "Connect",
+        "quickLinks": "Quick Links",
+        "copyright": "© 2026 Hamza Hajeb. All rights reserved.",
+        "location": "Sana'a, Yemen"
+    },
+    "errors": {
+        "required": "This field is required",
+        "email": "Invalid email address",
+        "not_found": "Not found"
+    },
+    "categories": {
+        "web": "Web Development",
+        "mobile": "Mobile Apps",
+        "desktop": "Desktop Apps",
+        "dashboard": "Dashboards",
+        "api": "Backend / API"
+    }
+}
