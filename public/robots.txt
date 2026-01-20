@@ -1,0 +1,5 @@
+# Portfolio - Hamza Hajeb
+User-agent: *
+Allow: /
+
+# Sitemap will be at your GitHub Pages URL
