@@ -6,6 +6,8 @@
 import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { HiX, HiMenu } from 'react-icons/hi';
+import { ThemeToggle } from './ThemeToggle';
 
 interface MobileMenuProps {
     isOpen: boolean;
@@ -45,17 +47,15 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                         animate={{ x: 0 }}
                         exit={{ x: '100%' }}
                         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-                        className="fixed top-0 end-0 h-full w-64 bg-white shadow-xl z-50 md:hidden"
+                        className="fixed top-0 end-0 h-full w-64 bg-white dark:bg-[#1E293B] shadow-xl z-50 md:hidden"
                     >
                         {/* Close Button */}
                         <button
                             onClick={onClose}
-                            className="absolute top-4 end-4 p-2 text-[#64748B] hover:text-[#0A2540]"
+                            className="absolute top-4 end-4 p-2 text-[#64748B] dark:text-[#94A3B8] hover:text-[#0A2540] dark:hover:text-white"
                             aria-label="Close menu"
                         >
-                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                            </svg>
+                            <HiX className="w-6 h-6" />
                         </button>
 
                         {/* Nav Links */}
@@ -70,7 +70,7 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                                     <a
                                         href={href}
                                         onClick={handleNavClick}
-                                        className="block py-3 text-lg font-medium text-[#1E293B] hover:text-[#38BDF8] transition-colors"
+                                        className="block py-3 text-lg font-medium text-[#1E293B] dark:text-white hover:text-[#38BDF8] transition-colors"
                                     >
                                         {t(`nav.${key}`)}
                                     </a>
@@ -78,8 +78,9 @@ export const MobileMenu = ({ isOpen, onClose }: MobileMenuProps) => {
                             ))}
                         </ul>
 
-                        {/* Language Switcher */}
-                        <div className="absolute bottom-8 start-6">
+                        {/* Theme Toggle & Language Switcher */}
+                        <div className="absolute bottom-8 start-6 flex items-center gap-4">
+                            <ThemeToggle />
                             <LanguageSwitcher />
                         </div>
                     </motion.nav>
@@ -96,12 +97,10 @@ export const HamburgerButton = ({ onClick }: { onClick: () => void }) => {
     return (
         <button
             onClick={onClick}
-            className="md:hidden p-2 text-[#0A2540] hover:text-[#38BDF8] transition-colors"
+            className="md:hidden p-2 text-[#0A2540] dark:text-white hover:text-[#38BDF8] transition-colors"
             aria-label="Open menu"
         >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            <HiMenu className="w-6 h-6" />
         </button>
     );
 };

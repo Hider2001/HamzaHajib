@@ -1,6 +1,6 @@
-# React + TypeScript + Vite
+# 🎨 World-Class Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Framer Motion, featuring pr
 
 Currently, two official plugins are available:
 

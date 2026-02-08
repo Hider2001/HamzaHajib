@@ -16,34 +16,45 @@ import { SkipLink } from '@/components/ui/SkipLink';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { SEO } from '@/components/ui/SEO';
 import { ErrorBoundary } from '@/components/ui/ErrorBoundary';
+import { CursorFollower } from '@/components/ui/CursorFollower';
+import { BackToTop } from '@/components/ui/BackToTop';
+import { ToastProvider } from '@/components/ui/Toast';
 
 function App() {
   return (
     <ErrorBoundary>
-      <div className="min-h-screen">
-        {/* A11y Skip Link */}
-        <SkipLink />
+      <ToastProvider>
+        <div className="min-h-screen bg-white dark:bg-[#0F172A] transition-colors duration-300">
+          {/* Custom Cursor */}
+          <CursorFollower />
 
-        {/* SEO Meta Tags */}
-        <SEO />
+          {/* A11y Skip Link */}
+          <SkipLink />
 
-        {/* Scroll Progress Indicator */}
-        <ScrollProgress />
+          {/* SEO Meta Tags */}
+          <SEO />
 
-        {/* Header */}
-        <Header />
+          {/* Scroll Progress Indicator */}
+          <ScrollProgress />
 
-        {/* Main Content */}
-        <main id="main-content">
-          <Hero />
-          <Work />
-          <About />
-          <Contact />
-        </main>
+          {/* Header */}
+          <Header />
 
-        {/* Footer */}
-        <Footer />
-      </div>
+          {/* Main Content */}
+          <main id="main-content">
+            <Hero />
+            <Work />
+            <About />
+            <Contact />
+          </main>
+
+          {/* Footer */}
+          <Footer />
+
+          {/* Back to Top Button */}
+          <BackToTop />
+        </div>
+      </ToastProvider>
     </ErrorBoundary>
   );
 }
