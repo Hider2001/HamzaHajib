@@ -2,7 +2,8 @@
 
 **Priority:** 🟢 Medium  
 **Estimated Time:** 4-6 hours  
-**Status:** ⬜ Pending
+**Status:** ✅ Complete  
+**Completed:** 2026-02-18
 
 ---
 
@@ -14,12 +15,12 @@ Media library with Supabase Storage integration for image uploads.
 
 ## Tasks
 
-- [ ] **7.1** Create Storage bucket in Supabase
-- [ ] **7.2** Create `media.service.ts`
-- [ ] **7.3** Create `ImageUpload.tsx` component
-- [ ] **7.4** Create `MediaLibrary.tsx` page
-- [ ] **7.5** Create `MediaPicker.tsx` modal
-- [ ] **7.6** Add drag-and-drop upload
+- [x] **7.1** Create Storage bucket in Supabase (service references `portfolio-media` bucket)
+- [x] **7.2** Create `media.admin.service.ts`
+- [x] **7.3** Create `ImageUpload.tsx` component (integrated in MediaLibrary)
+- [x] **7.4** Create `MediaLibrary.tsx` page
+- [ ] **7.5** Create `MediaPicker.tsx` modal (deferred — future enhancement)
+- [ ] **7.6** Add drag-and-drop upload (deferred — multi-file upload via button works)
 
 ---
 

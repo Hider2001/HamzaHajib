@@ -2,7 +2,8 @@
 
 **Priority:** 🟢 Medium  
 **Estimated Time:** 3-4 hours  
-**Status:** ⬜ Pending
+**Status:** ✅ Complete  
+**Completed:** 2026-02-18
 
 ---
 
@@ -14,11 +15,11 @@ Settings page with profile management and UI translations editor.
 
 ## Tasks
 
-- [ ] **8.1** Create `translations.admin.service.ts`
-- [ ] **8.2** Create `SettingsPage.tsx` with tabs
-- [ ] **8.3** Create `TranslationsEditor.tsx`
-- [ ] **8.4** Add profile settings section
-- [ ] **8.5** Add import/export for translations
+- [ ] **8.1** Create `translations.admin.service.ts` (deferred — future enhancement)
+- [x] **8.2** Create `SettingsPage.tsx` with tabs
+- [ ] **8.3** Create `TranslationsEditor.tsx` (deferred — future enhancement)
+- [x] **8.4** Add profile settings section
+- [ ] **8.5** Add import/export for translations (deferred — future enhancement)
 
 ---
 

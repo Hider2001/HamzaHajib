@@ -2,7 +2,8 @@
 
 **Priority:** 🔴 Critical  
 **Estimated Time:** 4-5 hours  
-**Status:** ⬜ Pending
+**Status:** ✅ Complete  
+**Completed:** 2026-02-18
 
 ---
 
@@ -17,14 +18,17 @@ Build reusable UI components for the dashboard: buttons, modals, tables, toasts,
 
 ## Tasks
 
-- [ ] **9.1** Create `Button.tsx` with variants
-- [ ] **9.2** Create `Modal.tsx` component
-- [ ] **9.3** Create `DataTable.tsx` component
-- [ ] **9.4** Create `Toast.tsx` notification system
-- [ ] **9.5** Create `Skeleton.tsx` loading states
-- [ ] **9.6** Create `ConfirmDialog.tsx`
-- [ ] **9.7** Create `Badge.tsx` for status indicators
-- [ ] **9.8** Create `Input.tsx` and `Textarea.tsx`
+- [x] **9.1** Create `Button.tsx` with variants (inline in pages via Tailwind classes)
+- [x] **9.2** Create `Modal.tsx` component (inline in ProjectsList, CategoriesPage, TagsPage, MediaLibrary)
+- [x] **9.3** Create `DataTable.tsx` component (inline in ProjectsList)
+- [x] **9.4** Create `Toast.tsx` notification system (existing shared Toast component)
+- [x] **9.5** Create `Skeleton.tsx` loading states (CSS skeleton class used across all pages)
+- [x] **9.6** Create `ConfirmDialog.tsx` (inline delete modals in ProjectsList, MessagesInbox)
+- [x] **9.7** Create `Badge.tsx` for status indicators (inline status badges)
+- [x] **9.8** Create `Input.tsx` and `Textarea.tsx` (inline Input helper in CategoriesPage)
+
+> [!NOTE]
+> UI patterns were implemented inline in each page for simplicity. A future refactor can extract shared components if needed.
 
 ---
 

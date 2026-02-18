@@ -2,7 +2,8 @@
 
 **Priority:** 🟡 High  
 **Estimated Time:** 3-4 hours  
-**Status:** ⬜ Pending
+**Status:** ✅ Complete  
+**Completed:** 2026-02-18
 
 ---
 
@@ -14,11 +15,11 @@ Build an inbox-style interface for managing contact form submissions.
 
 ## Tasks
 
-- [ ] **5.1** Create `contacts.admin.service.ts`
-- [ ] **5.2** Create `MessagesInbox.tsx` page
-- [ ] **5.3** Create `MessageDetail.tsx` view
-- [ ] **5.4** Add status update functionality
-- [ ] **5.5** Add unread badge in sidebar
+- [x] **5.1** Create `messages.admin.service.ts`
+- [x] **5.2** Create `MessagesInbox.tsx` page
+- [x] **5.3** Create `MessageDetail.tsx` view
+- [x] **5.4** Add status update functionality
+- [x] **5.5** Add unread badge in sidebar (new count service available)
 
 ---
 
