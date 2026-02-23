@@ -43,7 +43,6 @@ export const mediaAdminService = {
      * Upload a file
      */
     async upload(file: File, folder = 'uploads'): Promise<MediaFile> {
-        const ext = file.name.split('.').pop();
         const path = `${folder}/${Date.now()}-${file.name.replace(/\s+/g, '_')}`;
         const { error } = await supabase.storage
             .from(BUCKET)
