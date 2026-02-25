@@ -87,7 +87,7 @@ const SkillTag = ({ skill, index }: { skill: string; index: number }) => (
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 1.5 + index * 0.1, duration: 0.4, type: "spring" }}
         whileHover={{ scale: 1.05, y: -2 }}
-        className="px-6 py-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-sm text-white/80 font-medium cursor-default hover:bg-white/10 hover:border-[#38BDF8]/30 transition-all"
+        className="px-4 py-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-sm text-white/80 font-medium cursor-default hover:bg-white/10 hover:border-[#38BDF8]/30 transition-all"
     >
         {skill}
     </motion.span>
@@ -192,21 +192,21 @@ export const Hero = () => {
             </div>
 
             {/* Main Content - Increased padding */}
-            <div className="relative z-10 max-w-5xl mx-auto px-8 sm:px-12 lg:px-16 text-center py-32">
+            <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center py-16 sm:py-20">
                 {/* Status Badge */}
                 <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.5 }}
-                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-12"
+                    className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10 mb-6"
                 >
                     <motion.span
                         animate={{ scale: [1, 1.2, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
-                        className="w-2.5 h-2.5 rounded-full bg-green-400"
+                        className="w-2 h-2 rounded-full bg-green-400"
                     />
                     <span className="text-sm text-white/70 font-medium">{t('hero.status') || 'Available for Projects'}</span>
-                    <HiSparkles className="text-[#38BDF8] text-base" />
+                    <HiSparkles className="text-[#38BDF8] text-sm" />
                 </motion.div>
 
                 {/* Hero Headline */}
@@ -214,7 +214,7 @@ export const Hero = () => {
                     variants={headlineVariants}
                     initial="hidden"
                     animate="visible"
-                    className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-10 leading-tight tracking-tight"
+                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight tracking-tight"
                     style={{ fontFamily: 'Outfit, Cairo, sans-serif' }}
                 >
                     <span className="block bg-gradient-to-r from-white via-[#38BDF8] to-white bg-clip-text text-transparent">
@@ -227,7 +227,7 @@ export const Hero = () => {
                     variants={subtextVariants}
                     initial="hidden"
                     animate="visible"
-                    className="text-lg sm:text-xl md:text-2xl text-white/70 max-w-2xl mx-auto mb-14 leading-relaxed"
+                    className="text-base sm:text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-8 leading-relaxed"
                 >
                     {t('hero.subheadline')}
                 </motion.p>
@@ -237,7 +237,7 @@ export const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.2 }}
-                    className="flex flex-wrap gap-4 justify-center mb-16"
+                    className="flex flex-wrap gap-2.5 justify-center mb-8"
                 >
                     {skills.map((skill, index) => (
                         <SkillTag key={skill} skill={skill} index={index} />
@@ -249,11 +249,11 @@ export const Hero = () => {
                     variants={ctaVariants}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap gap-6 justify-center"
+                    className="flex flex-wrap gap-3 justify-center"
                 >
                     <Button
                         variant="gradient"
-                        size="lg"
+                        size="md"
                         onClick={() => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })}
                         icon={<HiCode className="w-5 h-5" />}
                         iconPosition="left"
@@ -279,7 +279,7 @@ export const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 2, duration: 0.5 }}
-                className="absolute bottom-12 left-1/2 -translate-x-1/2"
+                className="absolute bottom-8 left-1/2 -translate-x-1/2"
             >
                 <motion.div
                     animate={{ y: [0, 8, 0] }}

@@ -77,10 +77,17 @@ const variants = {
 // SIZE STYLES
 // ============================================
 const sizes = {
-    sm: 'px-5 py-2.5 text-sm rounded-lg gap-2',
-    md: 'px-7 py-3.5 text-base rounded-xl gap-2.5',
-    lg: 'px-10 py-5 text-lg rounded-xl gap-3',
-    xl: 'px-12 py-6 text-xl rounded-2xl gap-3.5'
+    sm: 'px-4 py-2 text-sm rounded-lg',
+    md: 'px-6 py-3 text-base rounded-xl',
+    lg: 'px-8 py-4 text-lg rounded-xl',
+    xl: 'px-10 py-5 text-xl rounded-2xl'
+};
+
+const contentGaps = {
+    sm: 'gap-2',
+    md: 'gap-2.5',
+    lg: 'gap-3',
+    xl: 'gap-3.5'
 };
 
 // ============================================
@@ -173,6 +180,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         `;
         const variantClasses = variants[variant];
         const sizeClasses = sizes[size];
+        const contentGapClass = contentGaps[size];
         const widthClass = fullWidth ? 'w-full' : '';
 
         return (
@@ -193,7 +201,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 {shine && isHovered && !disabled && !loading && <ShineEffect />}
 
                 {/* Content */}
-                <span className="relative z-10 flex items-center gap-inherit">
+                <span className={`relative z-10 flex items-center ${contentGapClass}`}>
                     {loading ? (
                         <>
                             <LoadingSpinner size={size} />
@@ -241,7 +249,7 @@ interface IconButtonProps extends Omit<ButtonProps, 'icon' | 'iconPosition' | 'f
 
 export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
     ({ icon, size = 'md', className = '', ...props }, ref) => {
-        const sizes = {
+        const iconSizes = {
             sm: 'w-8 h-8',
             md: 'w-10 h-10',
             lg: 'w-12 h-12',
@@ -252,7 +260,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
             <Button
                 ref={ref}
                 size={size}
-                className={`${sizes[size]} !p-0 !rounded-full ${className}`}
+                className={`${iconSizes[size]} !p-0 !rounded-full ${className}`}
                 {...props}
             >
                 {icon}

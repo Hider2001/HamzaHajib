@@ -105,11 +105,11 @@ const SocialLink = ({
             whileHover={{ scale: 1.15, y: -3 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, delay }}
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-white/70 hover:text-white transition-all duration-300"
+            className="w-9 h-9 rounded-xl flex items-center justify-center text-white/70 hover:text-white transition-all duration-300"
             style={{ backgroundColor: `${color}20` }}
             aria-label={label}
         >
-            <Icon className="text-lg" />
+            <Icon className="text-base" />
         </motion.a>
     );
 };
@@ -137,10 +137,10 @@ const Newsletter = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.3 }}
-            className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10"
+            className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 border border-white/10"
         >
-            <h4 className="font-semibold text-white mb-2">Stay Updated</h4>
-            <p className="text-white/60 text-sm mb-4">Subscribe to get updates on new projects and articles.</p>
+            <h4 className="font-semibold text-white mb-1.5 text-sm">Stay Updated</h4>
+            <p className="text-white/60 text-xs mb-3">Subscribe to get updates on new projects and articles.</p>
 
             {isSubscribed ? (
                 <motion.div
@@ -158,15 +158,15 @@ const Newsletter = () => {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your email"
-                        className="flex-1 px-4 py-2.5 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-[#38BDF8] transition-colors"
+                        className="flex-1 px-3 py-2 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/40 text-sm focus:outline-none focus:border-[#38BDF8] transition-colors"
                     />
                     <motion.button
                         type="submit"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-[#38BDF8] to-[#6366f1] text-white text-sm font-medium"
+                        className="px-3 py-2 rounded-xl bg-gradient-to-r from-[#38BDF8] to-[#6366f1] text-white text-sm font-medium"
                     >
-                        <HiPaperAirplane className="text-lg rotate-90" />
+                        <HiPaperAirplane className="text-base rotate-90" />
                     </motion.button>
                 </form>
             )}
@@ -178,13 +178,13 @@ const Newsletter = () => {
 // CONTACT INFO COMPONENT
 // ============================================
 const ContactInfo = ({ icon: Icon, label, value }: { icon: React.ComponentType<{ className?: string }>; label: string; value: string }) => (
-    <div className="flex items-center gap-3">
-        <div className="w-8 h-8 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center">
-            <Icon className="text-[#38BDF8] text-sm" />
+    <div className="flex items-center gap-2.5">
+        <div className="w-7 h-7 rounded-lg bg-[#38BDF8]/20 flex items-center justify-center">
+            <Icon className="text-[#38BDF8] text-xs" />
         </div>
         <div>
             <p className="text-white/40 text-xs">{label}</p>
-            <p className="text-white/80 text-sm">{value}</p>
+            <p className="text-white/80 text-xs">{value}</p>
         </div>
     </div>
 );
@@ -250,13 +250,13 @@ export const Footer = () => {
         <>
             <footer
                 ref={ref}
-                className="relative bg-gradient-to-br from-[#0A2540] via-[#0f3460] to-[#1a1a2e] dark:from-[#000000] dark:via-[#0A2540] dark:to-[#0F172A] text-white pt-20 pb-8 overflow-hidden"
+                className="relative bg-gradient-to-br from-[#0A2540] via-[#0f3460] to-[#1a1a2e] dark:from-[#000000] dark:via-[#0A2540] dark:to-[#0F172A] text-white pt-24 pb-8 overflow-hidden"
             >
                 <AnimatedBackground />
 
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
                     {/* Main Footer Content */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                         {/* Brand Column */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -267,23 +267,23 @@ export const Footer = () => {
                             {/* Logo */}
                             <motion.a
                                 href="#"
-                                className="inline-flex items-center gap-2 mb-4"
+                                className="inline-flex items-center gap-2 mb-3"
                                 whileHover={{ scale: 1.02 }}
                             >
-                                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#38BDF8] to-[#6366f1] flex items-center justify-center">
-                                    <span className="text-white font-bold text-lg">H</span>
+                                <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#38BDF8] to-[#6366f1] flex items-center justify-center">
+                                    <span className="text-white font-bold text-base">H</span>
                                 </div>
-                                <span className="text-xl font-bold bg-gradient-to-r from-white to-[#38BDF8] bg-clip-text text-transparent">
+                                <span className="text-lg font-bold bg-gradient-to-r from-white to-[#38BDF8] bg-clip-text text-transparent">
                                     {t('brand')}
                                 </span>
                             </motion.a>
 
-                            <p className="text-white/60 text-sm mb-6 leading-relaxed">
+                            <p className="text-white/60 text-sm mb-5 leading-relaxed">
                                 Full-stack developer crafting beautiful digital experiences with modern technologies.
                             </p>
 
                             {/* Contact Info */}
-                            <div className="space-y-3">
+                            <div className="space-y-2.5">
                                 <ContactInfo icon={HiLocationMarker} label="Location" value="Yemen, Sana'a" />
                                 <ContactInfo icon={HiMail} label="Email" value="hamzafuad2001@gmail.com" />
                                 <ContactInfo icon={HiPhone} label="Phone" value="+967 776 645 280" />
@@ -296,11 +296,11 @@ export const Footer = () => {
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ delay: 0.2 }}
                         >
-                            <h4 className="font-semibold text-white mb-6 flex items-center gap-2">
-                                <span className="w-8 h-0.5 bg-[#38BDF8]" />
+                            <h4 className="font-semibold text-white mb-5 flex items-center gap-2 text-sm">
+                                <span className="w-6 h-0.5 bg-[#38BDF8]" />
                                 Quick Links
                             </h4>
-                            <ul className="space-y-3">
+                            <ul className="space-y-2.5">
                                 {quickLinks.map((link, index) => (
                                     <FooterLink
                                         key={link.key}
@@ -318,11 +318,11 @@ export const Footer = () => {
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ delay: 0.3 }}
                         >
-                            <h4 className="font-semibold text-white mb-6 flex items-center gap-2">
-                                <span className="w-8 h-0.5 bg-[#38BDF8]" />
+                            <h4 className="font-semibold text-white mb-5 flex items-center gap-2 text-sm">
+                                <span className="w-6 h-0.5 bg-[#38BDF8]" />
                                 Services
                             </h4>
-                            <ul className="space-y-3">
+                            <ul className="space-y-2.5">
                                 {['Web Development', 'Mobile Apps', 'UI/UX Design', 'API Integration', 'Consulting'].map((service, index) => (
                                     <FooterLink
                                         key={service}
@@ -340,13 +340,13 @@ export const Footer = () => {
                             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                             transition={{ delay: 0.4 }}
                         >
-                            <h4 className="font-semibold text-white mb-6 flex items-center gap-2">
-                                <span className="w-8 h-0.5 bg-[#38BDF8]" />
+                            <h4 className="font-semibold text-white mb-5 flex items-center gap-2 text-sm">
+                                <span className="w-6 h-0.5 bg-[#38BDF8]" />
                                 Connect
                             </h4>
 
                             {/* Social Links */}
-                            <div className="flex gap-3 mb-6">
+                            <div className="flex gap-2.5 mb-5">
                                 {socialLinks.map((link, index) => (
                                     <SocialLink key={link.label} {...link} delay={0.4 + index * 0.05} />
                                 ))}

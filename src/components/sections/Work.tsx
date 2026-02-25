@@ -40,7 +40,7 @@ const ProjectCard = ({
             <div className="relative overflow-hidden aspect-[16/10]">
                 {/* Main Image */}
                 <motion.img
-                    src={project.thumbnail_url || 'https://via.placeholder.com/800x500'}
+                    src={project.thumbnail_url || 'https://placehold.co/800x500?text=Project+Image'}
                     alt={getLocalizedField(project, 'title', lang)}
                     className="w-full h-full object-cover"
                     animate={{ scale: isHovered ? 1.05 : 1 }}
@@ -110,7 +110,7 @@ const ProjectCard = ({
             </div>
 
             {/* Content - Increased padding */}
-            <div className="p-7 flex flex-col flex-grow">
+            <div className="p-6 flex flex-col flex-grow">
                 {/* Title */}
                 <motion.h3
                     className="text-xl font-bold text-[#0A2540] dark:text-white mb-3 group-hover:text-[#38BDF8] transition-colors duration-300"
@@ -156,7 +156,7 @@ const ProjectCard = ({
 const SkeletonCard = () => (
     <div className="bg-white dark:bg-[#1E293B] rounded-2xl overflow-hidden shadow-md h-full flex flex-col">
         <div className="skeleton w-full aspect-[16/10]" />
-        <div className="p-7 space-y-4 flex-grow">
+        <div className="p-6 space-y-3 flex-grow">
             <div className="skeleton h-6 w-3/4" />
             <div className="skeleton h-4 w-full" />
             <div className="skeleton h-4 w-2/3" />
@@ -186,7 +186,7 @@ const FilterButton = ({
         whileTap={{ scale: 0.97 }}
         whileHover={{ scale: 1.02 }}
         onClick={onClick}
-        className={`relative px-7 py-3.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2.5
+        className={`relative px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 flex items-center gap-2
             ${isActive
                 ? 'text-white shadow-lg shadow-[#38BDF8]/20'
                 : 'bg-white dark:bg-[#1E293B] text-[#64748B] dark:text-[#94A3B8] hover:bg-gray-50 dark:hover:bg-[#334155] shadow-sm hover:shadow-md'
@@ -223,22 +223,22 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: string }
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
         >
             {/* Badge */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#38BDF8]/10 dark:bg-[#38BDF8]/15 text-[#38BDF8] text-sm font-medium mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#38BDF8]/10 dark:bg-[#38BDF8]/15 text-[#38BDF8] text-sm font-medium mb-5"
             >
-                <HiCode className="text-lg" />
+                <HiCode className="text-base" />
                 <span>Portfolio</span>
             </motion.div>
 
             {/* Title */}
             <h2
-                className="text-4xl sm:text-5xl font-bold text-[#0A2540] dark:text-white mb-5"
+                className="text-3xl sm:text-4xl font-bold text-[#0A2540] dark:text-white mb-4"
                 style={{ fontFamily: 'Outfit, Cairo, sans-serif' }}
             >
                 {title}
@@ -246,7 +246,7 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: string }
 
             {/* Subtitle */}
             {subtitle && (
-                <p className="text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto text-lg leading-relaxed">
+                <p className="text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto text-base leading-relaxed">
                     {subtitle}
                 </p>
             )}
@@ -256,7 +256,7 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle?: string }
                 initial={{ scaleX: 0 }}
                 animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="mt-8 mx-auto w-20 h-1 bg-gradient-to-r from-[#38BDF8] to-[#6366f1] rounded-full"
+                className="mt-6 mx-auto w-16 h-1 bg-gradient-to-r from-[#38BDF8] to-[#6366f1] rounded-full"
             />
         </motion.div>
     );
@@ -306,8 +306,8 @@ export const Work = () => {
                 </div>
 
                 {/* Projects Grid - Increased gap */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 min-h-[400px]">
-                    <AnimatePresence mode="wait">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
+                    <AnimatePresence>
                         {loading ? (
                             // Loading Skeletons
                             Array.from({ length: 6 }).map((_, i) => (
@@ -365,15 +365,15 @@ export const Work = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.3 }}
-                        className="text-center mt-16"
+                        className="text-center mt-12"
                     >
                         <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="px-10 py-4 rounded-xl bg-gradient-to-r from-[#0A2540] to-[#38BDF8] text-white font-semibold shadow-lg shadow-[#38BDF8]/20 hover:shadow-[#38BDF8]/40 transition-all duration-300 inline-flex items-center gap-3"
+                            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#0A2540] to-[#38BDF8] text-white font-semibold shadow-lg shadow-[#38BDF8]/20 hover:shadow-[#38BDF8]/40 transition-all duration-300 inline-flex items-center gap-2.5"
                         >
                             <span>View All Projects</span>
-                            <HiExternalLink className="text-lg" />
+                            <HiExternalLink className="text-base" />
                         </motion.button>
                     </motion.div>
                 )}

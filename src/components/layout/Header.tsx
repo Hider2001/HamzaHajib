@@ -58,14 +58,14 @@ const MagneticNavLink = ({
             onHoverStart={onHover}
             style={{ x: mouseX, y: mouseY }}
         >
-            <a
-                href={item.href}
-                className={`relative flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 group
+                <a
+                    href={item.href}
+                    className={`relative flex items-center gap-2.5 px-5 py-2.5 rounded-xl transition-all duration-300 group
                     ${isActive
                         ? 'text-[#38BDF8] font-semibold'
                         : 'text-gray-700 dark:text-gray-300 hover:text-[#38BDF8] dark:hover:text-[#38BDF8]'
                     }`}
-            >
+                >
                 {/* Background hover effect */}
                 <motion.span
                     className="absolute inset-0 rounded-xl bg-gradient-to-r from-[#38BDF8]/10 to-[#6366f1]/10 dark:from-[#38BDF8]/20 dark:to-[#6366f1]/20"
@@ -241,7 +241,7 @@ export const Header = () => {
                         <Logo />
 
                         {/* Desktop Navigation */}
-                        <ul ref={navRef} className="hidden md:flex items-center gap-2">
+                        <ul ref={navRef} className="hidden md:flex items-center gap-1">
                             {navItems.map((item) => (
                                 <MagneticNavLink
                                     key={item.key}
@@ -279,7 +279,7 @@ export const Header = () => {
                                 href="#contact"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="ml-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#38BDF8] to-[#6366f1] text-white font-medium text-sm shadow-lg shadow-[#38BDF8]/20 hover:shadow-[#38BDF8]/40 transition-shadow"
+                                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#38BDF8] to-[#6366f1] text-white font-medium text-sm shadow-lg shadow-[#38BDF8]/20 hover:shadow-[#38BDF8]/40 transition-shadow"
                             >
                                 {t('contact.title')}
                             </motion.a>

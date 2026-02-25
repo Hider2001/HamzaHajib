@@ -66,14 +66,14 @@ const StatCard = ({
             className="relative group"
         >
             {/* Card Content */}
-            <div className="relative bg-white dark:bg-[#1E293B] rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700/50">
+            <div className="relative bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700/50">
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#38BDF8]/10 to-[#6366f1]/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="text-2xl text-[#38BDF8]" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#38BDF8]/10 to-[#6366f1]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="text-xl text-[#38BDF8]" />
                 </div>
 
                 {/* Counter */}
-                <div className="text-4xl font-bold text-[#0A2540] dark:text-white mb-2">
+                <div className="text-3xl font-bold text-[#0A2540] dark:text-white mb-1">
                     <AnimatedCounter end={value} suffix={suffix} duration={2 + delay} />
                 </div>
 
@@ -159,20 +159,20 @@ const SkillCard = ({
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.5, delay }}
             whileHover={{ scale: 1.01 }}
-            className="bg-white dark:bg-[#1E293B] rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700/50"
+            className="bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700/50"
         >
             {/* Header */}
-            <div className="flex items-center gap-4 mb-8">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#38BDF8]/10 to-[#6366f1]/10 flex items-center justify-center">
-                    <Icon className="text-xl text-[#38BDF8]" />
+            <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#38BDF8]/10 to-[#6366f1]/10 flex items-center justify-center">
+                    <Icon className="text-lg text-[#38BDF8]" />
                 </div>
-                <h4 className="font-semibold text-[#0A2540] dark:text-white text-lg">
+                <h4 className="font-semibold text-[#0A2540] dark:text-white text-base">
                     {title}
                 </h4>
             </div>
 
             {/* Skills */}
-            <div className="space-y-5">
+            <div className="space-y-4">
                 {skillList.map((skill, index) => (
                     <SkillBar key={skill.name} skill={skill} index={index} />
                 ))}
@@ -195,9 +195,9 @@ const ToolTag = ({ tool, index }: { tool: { name: string; icon: string }; index:
             animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
             whileHover={{ scale: 1.08, y: -2 }}
             transition={{ delay: index * 0.05, type: "spring", stiffness: 300 }}
-            className="px-5 py-3 bg-gradient-to-r from-[#0A2540] to-[#38BDF8] text-white rounded-xl text-sm font-medium shadow-md hover:shadow-lg cursor-default inline-flex items-center gap-2.5"
+            className="px-4 py-2.5 bg-gradient-to-r from-[#0A2540] to-[#38BDF8] text-white rounded-xl text-sm font-medium shadow-md hover:shadow-lg cursor-default inline-flex items-center gap-2"
         >
-            <span className="text-lg">{tool.icon}</span>
+            <span className="text-base">{tool.icon}</span>
             {tool.name}
         </motion.span>
     );
@@ -216,29 +216,29 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string })
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
         >
             {/* Badge */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#38BDF8]/10 dark:bg-[#38BDF8]/15 text-[#38BDF8] text-sm font-medium mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#38BDF8]/10 dark:bg-[#38BDF8]/15 text-[#38BDF8] text-sm font-medium mb-5"
             >
-                <HiUser className="text-lg" />
+                <HiUser className="text-base" />
                 <span>About Me</span>
             </motion.div>
 
             {/* Title */}
             <h2
-                className="text-4xl sm:text-5xl font-bold text-[#0A2540] dark:text-white mb-5"
+                className="text-3xl sm:text-4xl font-bold text-[#0A2540] dark:text-white mb-4"
                 style={{ fontFamily: 'Outfit, Cairo, sans-serif' }}
             >
                 {title}
             </h2>
 
             {/* Subtitle */}
-            <p className="text-[#64748B] dark:text-[#94A3B8] max-w-3xl mx-auto text-lg leading-relaxed">
+            <p className="text-[#64748B] dark:text-[#94A3B8] max-w-3xl mx-auto text-base leading-relaxed">
                 {subtitle}
             </p>
 
@@ -247,7 +247,7 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string })
                 initial={{ scaleX: 0 }}
                 animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="mt-8 mx-auto w-20 h-1 bg-gradient-to-r from-[#38BDF8] to-[#6366f1] rounded-full"
+                className="mt-6 mx-auto w-16 h-1 bg-gradient-to-r from-[#38BDF8] to-[#6366f1] rounded-full"
             />
         </motion.div>
     );
@@ -296,7 +296,7 @@ export const About = () => {
                 <SectionHeader title={t('about.title')} subtitle={t('about.bio')} />
 
                 {/* Stats Section */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
                     {stats.map((stat, index) => (
                         <StatCard
                             key={stat.label}
@@ -323,7 +323,7 @@ export const About = () => {
                 </motion.div>
 
                 {/* Skills Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
                     {/* Programming Skills */}
                     <SkillCard
                         title={t('skills.programming')}
@@ -347,20 +347,20 @@ export const About = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                         whileHover={{ scale: 1.01 }}
-                        className="bg-white dark:bg-[#1E293B] rounded-2xl p-8 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700/50"
+                        className="bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700/50"
                     >
                         {/* Header */}
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#38BDF8]/10 to-[#6366f1]/10 flex items-center justify-center">
-                                <HiCog className="text-xl text-[#38BDF8]" />
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#38BDF8]/10 to-[#6366f1]/10 flex items-center justify-center">
+                                <HiCog className="text-lg text-[#38BDF8]" />
                             </div>
-                            <h4 className="font-semibold text-[#0A2540] dark:text-white text-lg">
+                            <h4 className="font-semibold text-[#0A2540] dark:text-white text-base">
                                 {t('skills.tools')}
                             </h4>
                         </div>
 
                         {/* Tools Grid */}
-                        <div className="flex flex-wrap gap-3">
+                        <div className="flex flex-wrap gap-2.5">
                             {skills.tools.map((tool, index) => (
                                 <ToolTag key={tool.name} tool={tool} index={index} />
                             ))}
@@ -379,9 +379,9 @@ export const About = () => {
                     <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="px-10 py-4 rounded-xl bg-gradient-to-r from-[#0A2540] to-[#38BDF8] text-white font-semibold shadow-lg shadow-[#38BDF8]/20 hover:shadow-[#38BDF8]/40 transition-all duration-300 inline-flex items-center gap-3"
+                        className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-[#0A2540] to-[#38BDF8] text-white font-semibold shadow-lg shadow-[#38BDF8]/20 hover:shadow-[#38BDF8]/40 transition-all duration-300 inline-flex items-center gap-2.5"
                     >
-                        <HiLightningBolt className="text-lg" />
+                        <HiLightningBolt className="text-base" />
                         <span>Download CV</span>
                     </motion.button>
                 </motion.div>

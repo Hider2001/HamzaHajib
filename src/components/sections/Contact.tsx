@@ -128,17 +128,17 @@ const ContactInfoCard = ({
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.5, delay }}
             whileHover={{ scale: 1.02, x: 5 }}
-            className="flex items-center gap-4 p-4 rounded-xl bg-white dark:bg-[#1E293B] shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group cursor-pointer"
+            className="flex items-center gap-3 p-3.5 rounded-xl bg-white dark:bg-[#1E293B] shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 group cursor-pointer"
         >
             {/* Icon */}
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#38BDF8]/20 to-[#6366f1]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Icon className="text-xl text-[#38BDF8]" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#38BDF8]/20 to-[#6366f1]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Icon className="text-lg text-[#38BDF8]" />
             </div>
 
             {/* Content */}
             <div>
                 <p className="text-sm text-[#64748B] dark:text-[#94A3B8]">{title}</p>
-                <p className="font-medium text-[#0A2540] dark:text-white group-hover:text-[#38BDF8] transition-colors">
+                <p className="font-medium text-[#0A2540] dark:text-white group-hover:text-[#38BDF8] transition-colors text-sm">
                     {value}
                 </p>
             </div>
@@ -186,11 +186,11 @@ const SocialLinkButton = ({
             whileHover={{ scale: 1.1, y: -3 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, delay }}
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300"
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300"
             style={{ backgroundColor: color }}
             aria-label={label}
         >
-            <Icon className="text-xl" />
+            <Icon className="text-lg" />
         </motion.a>
     );
 };
@@ -215,22 +215,22 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string })
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#38BDF8]/10 dark:bg-[#38BDF8]/20 text-[#38BDF8] text-sm font-medium mb-4"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#38BDF8]/10 dark:bg-[#38BDF8]/20 text-[#38BDF8] text-sm font-medium mb-5"
             >
-                <HiMail className="text-lg" />
+                <HiMail className="text-base" />
                 <span>Get In Touch</span>
             </motion.div>
 
             {/* Title */}
             <h2
-                className="text-4xl sm:text-5xl font-bold text-[#0A2540] dark:text-white mb-4"
+                className="text-3xl sm:text-4xl font-bold text-[#0A2540] dark:text-white mb-4"
                 style={{ fontFamily: 'Outfit, Cairo, sans-serif' }}
             >
                 {title}
             </h2>
 
             {/* Subtitle */}
-            <p className="text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto text-lg">
+            <p className="text-[#64748B] dark:text-[#94A3B8] max-w-2xl mx-auto text-base">
                 {subtitle}
             </p>
 
@@ -239,7 +239,7 @@ const SectionHeader = ({ title, subtitle }: { title: string; subtitle: string })
                 initial={{ scaleX: 0 }}
                 animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
-                className="mt-6 mx-auto w-24 h-1 bg-gradient-to-r from-[#38BDF8] to-[#6366f1] rounded-full"
+                className="mt-6 mx-auto w-16 h-1 bg-gradient-to-r from-[#38BDF8] to-[#6366f1] rounded-full"
             />
         </motion.div>
     );
@@ -317,18 +317,18 @@ export const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="py-24 bg-gradient-to-b from-white to-[#F8FAFC] dark:from-[#0F172A] dark:to-[#0A2540] transition-colors duration-300 relative overflow-hidden">
+        <section id="contact" className="py-32 bg-gradient-to-b from-white to-[#F8FAFC] dark:from-[#0F172A] dark:to-[#0A2540] transition-colors duration-300 relative overflow-hidden">
             {/* Background Decorations */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#38BDF8]/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#6366f1]/5 rounded-full blur-3xl" />
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
                 {/* Section Header */}
                 <SectionHeader title={t('contact.title')} subtitle={t('contact.subtitle')} />
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                     {/* Left Column - Contact Info */}
                     <div className="space-y-6">
                         {/* Contact Info Cards */}
@@ -366,7 +366,7 @@ export const Contact = () => {
                         initial={{ opacity: 0, x: 30 }}
                         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className="bg-white dark:bg-[#1E293B] rounded-2xl p-8 shadow-xl border border-gray-100 dark:border-gray-700"
+                        className="bg-white dark:bg-[#1E293B] rounded-2xl p-6 shadow-xl border border-gray-100 dark:border-gray-700"
                     >
                         <AnimatePresence mode="wait">
                             {isSuccess ? (

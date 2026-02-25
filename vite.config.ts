@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -15,5 +15,6 @@ export default defineConfig({
       '@locales': path.resolve(__dirname, './src/locales'),
     },
   },
-  base: '/HamzaHajib/', // GitHub Pages base path
-})
+  // Use repo base path only in production (e.g. GitHub Pages).
+  base: mode === 'production' ? '/HamzaHajib/' : '/',
+}))

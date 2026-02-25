@@ -25,9 +25,18 @@ export const CursorFollower = () => {
     };
 
     const handleMouseEnter = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (target.tagName === 'A' || target.tagName === 'BUTTON' || target.closest('a, button')) {
+      const target = e.target;
+
+      // Guard against non-Element targets such as Document/Text nodes.
+      if (!(target instanceof Element)) {
+        setIsHovering(false);
+        return;
+      }
+
+      if (target.matches('a, button') || target.closest('a, button')) {
         setIsHovering(true);
+      } else {
+        setIsHovering(false);
       }
     };
 
